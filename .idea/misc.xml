@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/btn_custom.xml" value="0.1865" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/btn_customnormal.xml" value="0.1865" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/btn_custompress.xml" value="0.1865" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/costum_input.xml" value="0.1865" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/costum_input2.xml" value="0.1605" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/drawable/ic_launcher_background.xml" value="0.176" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_info_tipsdan_trik.xml" value="0.33" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_info_tipsdan_trik_admin.xml" value="0.2" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_inputtipsdantrik_admin.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_kumpulanfilepdf.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_list_admin.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_list_siswaadmin.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_main.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_menuutama.xml" value="0.16" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_menuutama_admin.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_pilihkampus.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_pilihkampus_admin.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_profiluser.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_register.xml" value="0.18" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/activity_uploadfile.xml" value="0.2" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/row_tipsdantrik.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/layout/row_user.xml" value="0.1" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/ecounseling/app/src/main/res/menu/search_menu.xml" value="0.23255813953488372" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".inputtipsdantrik_admin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/greencolor">
+
+        <ImageButton
+            android:id="@+id/backInputTipsdanTrik_admin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="345dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/back" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/communication" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="monospace"
+        android:paddingStart="15dp"
+        android:text="Input Tips dan Trik"
+        android:textColor="@color/colortext"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="monospace"
+        android:text="Input Informasi"
+        android:textColor="@color/greencolor"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/inputTipsdanTrik"
+        android:layout_width="335dp"
+        android:layout_height="215dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="393dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="283dp"
+        android:background="@drawable/costum_input"
+        android:fontFamily="monospace"
+        android:hint="Masukkan Informasi"
+        android:paddingStart="15dp"
+        android:textColorHint="@color/colortext"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnsimpaninputtipsdantrik_admin"
+        android:layout_width="182dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="633dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="197dp"
+        android:background="@drawable/btn_custom"
+        android:text="Simpan" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846584913320",
+    "project_id": "e-counseling-cdc4c",
+    "storage_bucket": "e-counseling-cdc4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846584913320:android:f70e425e41b4d66b78919d",
+        "android_client_info": {
+          "package_name": "com.example.e_counseling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846584913320-m9of633acp4pu8cn0jma5ea7hm1mi5nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Iuztns-KzEnzWgBIcEqLmkjLMahztgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846584913320-m9of633acp4pu8cn0jma5ea7hm1mi5nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
