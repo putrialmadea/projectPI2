@@ -73,26 +73,26 @@ public class pilihkampus_admin extends AppCompatActivity {
 
     }
         private void saveData (String input_jurusanadmin, String input_kampusadmin){
-            Map<String, Object> user = new HashMap<>();
-            user.put("Jurusan", input_jurusanadmin);
-            user.put("Universitas", input_kampusadmin);
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("Jurusan", input_jurusanadmin);
+                    user.put("Universitas", input_kampusadmin);
 
-            progressDialog.show();
-            if (id!=null){
-                db.collection("users").document(id)
-                        .set(user)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }else{
-                                    Toast.makeText(getApplicationContext(), "Gagal", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }else {
+                    progressDialog.show();
+                    if (id!=null){
+                        db.collection("users").document(id)
+                                .set(user)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }else{
+                                            Toast.makeText(getApplicationContext(), "Gagal", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                    }else {
                 db.collection("users")
                         .add(user)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

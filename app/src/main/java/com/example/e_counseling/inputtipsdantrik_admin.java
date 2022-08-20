@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -27,7 +29,7 @@ public class inputtipsdantrik_admin extends AppCompatActivity {
     private Button btnsimpaninputtipsdantrik_admin;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ProgressDialog progressDialog;
-    private String id = " ";
+    private String id = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +61,33 @@ public class inputtipsdantrik_admin extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+        if (intent!=null){
+            id = intent.getStringExtra("id");
+            inputTipsdanTrik.setText(intent.getStringExtra("tipstrik"));
+        }
+
     }
     private void saveData(String inputTipsdanTrik ){
         Map<String, Object> tipstrik = new HashMap<>();
         tipstrik.put("tipstrik", inputTipsdanTrik);
 
         progressDialog.show();
+        if (id!=null){
+            db.collection("tipstriks").document(id)
+                    .set(tipstrik)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Gagal", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }else{
             db.collection("tipstriks")
                     .add(tipstrik)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -82,6 +105,6 @@ public class inputtipsdantrik_admin extends AppCompatActivity {
                             progressDialog.dismiss();
                         }
                     });
-        //}
+        }
     }
 }

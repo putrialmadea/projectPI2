@@ -70,7 +70,7 @@ public class login extends AppCompatActivity {
                             Toast.makeText(login.this, "Failed Login, your Username or Password is Wrong", Toast.LENGTH_LONG).show();
                         }
 
-                        // ...
+
                     }
                 });
     }

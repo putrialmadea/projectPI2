@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.text.InputType;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -13,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_counseling.R;
 import com.example.e_counseling.model.Tipsdantrik;
-import com.google.firebase.firestore.core.View;
 
 import java.util.List;
 
@@ -26,8 +26,8 @@ public class TipstrikAdapter extends RecyclerView.Adapter<TipstrikAdapter.MyView
         void onClick(int pos);
     }
 
-    public Dialog getDialog() {
-        return dialog;
+    public void setDialog(Dialog dialog){
+        this.dialog = dialog;
     }
 
     public TipstrikAdapter(Context context, List<Tipsdantrik> list) {
@@ -38,7 +38,7 @@ public class TipstrikAdapter extends RecyclerView.Adapter<TipstrikAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tipsdantrik,parent,false);
+        android.view.View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tipsdantrik,parent,false);
         return new MyViewHolder(itemView);
     }
 
@@ -48,19 +48,26 @@ public class TipstrikAdapter extends RecyclerView.Adapter<TipstrikAdapter.MyView
     }
 
     @Override
-    public int getItemCount() {
+    public  int getItemCount(){
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tipsdantrik;
 
-        public MyViewHolder(@NonNull View itemView){
+        public MyViewHolder(android.view.View itemView) {
             super(itemView);
-            tipsdantrik = itemView.findViewById(R.id.Itipsdantrik);
+            tipsdantrik=itemView.findViewById(R.id. Itipsdantrik);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(dialog!=null){
+                        dialog.onClick(getLayoutPosition());
+                    }
+                }
+            });
         }
     }
-
 }
 
 

@@ -28,7 +28,6 @@ public class Uploadfile extends AppCompatActivity {
     ImageButton btnbackuploadfile;
     EditText PilihFile;
     Button btnuploadfile, btnkumpulanfile;
-
     StorageReference storageReference;
     DatabaseReference databaseReference;
 

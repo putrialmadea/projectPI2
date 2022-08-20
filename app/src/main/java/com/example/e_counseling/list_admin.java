@@ -64,8 +64,8 @@ public class list_admin extends AppCompatActivity {
                             case 0:
                                 Intent intent = new Intent(getApplicationContext(), pilihkampus_admin.class);
                                 intent.putExtra("id", list.get(pos).getId());
-                                intent.putExtra("Jurusan", list.get(pos).getInput_jurusanadmin());
-                                intent.putExtra("Universitas", list.get(pos).getInput_kampusadmin());
+                                intent.putExtra("Universitas", list.get(pos).getInput_jurusanadmin());
+                                intent.putExtra("Jurusan", list.get(pos).getInput_kampusadmin());
                                 startActivity(intent);
                                 break;
                             case 1:

@@ -1,7 +1,7 @@
 package com.example.e_counseling.model;
 
 public class Tipsdantrik {
-    private String Inputtipsdantrik;
+    private String id, Inputtipsdantrik;
 
     public Tipsdantrik(){
 
@@ -9,6 +9,14 @@ public class Tipsdantrik {
 
     public Tipsdantrik(String Inputtipsdantrik){
         this.Inputtipsdantrik = Inputtipsdantrik;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getInputtipsdantrik() {

@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -50,33 +52,38 @@ public class infoTipsdanTrik_admin extends AppCompatActivity {
         progressDialog.setMessage("Menggamil Data..");
         tipstrikAdapter = new TipstrikAdapter(getApplicationContext(),list);
 
+        tipstrikAdapter.setDialog(new TipstrikAdapter.Dialog() {
+            @Override
+            public void onClick(int pos) {
+                final CharSequence[] dialogItem =  {"Edit", "Hapus"};
+                AlertDialog.Builder dialog = new AlertDialog.Builder(infoTipsdanTrik_admin.this);
+                dialog.setItems(dialogItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        switch (i){
+                            case 0:
+                                Intent intent = new Intent(getApplicationContext(), inputtipsdantrik_admin.class);
+                                intent.putExtra("id", list.get(pos).getId());
+                                intent.putExtra("tipstrik", list.get(pos).getInputtipsdantrik());
+                                startActivity(intent);
+                                break;
+                            case 1:
+                                deleteData(list.get(pos).getId());
+                                break;
+                        }
+                    }
+                });
+            dialog.show();
+            }
+        });
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         RecyclerView.ItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(decoration);
         recyclerView.setAdapter(tipstrikAdapter);
 
-        progressDialog.show();
-        db.collection("tipstriks")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @SuppressLint("notifyDatasetChanged")
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        list.clear();
-                        if (task.isSuccessful()){
-                            for (QueryDocumentSnapshot document : task.getResult()){
-                                Tipsdantrik tipsdantrik = new Tipsdantrik(document.getString("tipstrik"));
-                                list.add(tipsdantrik);
-                            }
-                            tipstrikAdapter.notifyDataSetChanged();
-                        }else {
-                            Toast.makeText(getApplicationContext(),"Data Gagal di Ambil!", Toast.LENGTH_SHORT).show();
-                        }
-                        progressDialog.dismiss();
 
-                    }
-                });
 
                 backinfoTipsdanTrik.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,5 +98,52 @@ public class infoTipsdanTrik_admin extends AppCompatActivity {
                 startActivity(new Intent(infoTipsdanTrik_admin.this, inputtipsdantrik_admin.class));
             }
         });
+
+        getData();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    private void getData(){
+            progressDialog.show();
+            db.collection("tipstriks")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @SuppressLint("notifyDatasetChanged")
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            list.clear();
+                            if (task.isSuccessful()){
+                                for (QueryDocumentSnapshot document : task.getResult()){
+                                    Tipsdantrik tipsdantrik = new Tipsdantrik(document.getString("tipstrik"));
+                                    tipsdantrik.setId(document.getId());
+                                    list.add(tipsdantrik);
+                                }
+                                tipstrikAdapter.notifyDataSetChanged();
+                            }else {
+                                Toast.makeText(getApplicationContext(),"Data Gagal di Ambil!", Toast.LENGTH_SHORT).show();
+                            }
+                            progressDialog.dismiss();
+                        }
+                    });
+        }
+
+    private void deleteData(String id){
+        progressDialog.show();
+        db.collection("tipstriks").document(id)
+                .delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Data Gagal di hapus!", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                            getData();
+                        }
+                    }
+                });
+        }
 }
